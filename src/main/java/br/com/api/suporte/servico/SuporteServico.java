@@ -32,7 +32,12 @@ public class SuporteServico {
         }else if(pm.getDescric_problem().equals("")){
             rm.setMensagem("O campo descrição do problema é obrigatório!");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        }else{
+        } 
+            // else if(pm.getStatus().equals("")){
+            //     rm.setMensagem("O campo status é obrigatório!");
+            //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+            // }
+        else{
             if(acao.equals("cadastrar")){
                 return new ResponseEntity<SuporteModelo>(pr.save(pm), HttpStatus.CREATED);
             }else{

@@ -1,6 +1,5 @@
 package br.com.api.suporte.modelo;
 
-
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
@@ -10,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+
 
 @Entity
 @Table(name="tbl_suporte")
@@ -23,6 +23,6 @@ public class SuporteModelo {
     private Integer codigo;
     private String local;
     private String descric_problem;
-    private Date data;
-
+    private String status = "Solicitado";
+    private Date data = new java.sql.Date(System.currentTimeMillis());
 }
